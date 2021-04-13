@@ -37,7 +37,7 @@ export default function Create() {
       }
       )
       // console.log(data)
-      fetch('http://localhost:8001/notes',{
+      fetch('https://sticky-notess.herokuapp.com/notes',{
         method:'POST',
         headers:{"Content-type":"application/json"},
         body:JSON.stringify({title,details,categories})

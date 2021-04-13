@@ -7,12 +7,12 @@ export const user=React.createContext()
 export default function Notes() {
   const[data,setdata]=useState([])
   useEffect(()=>{
-    fetch('http://localhost:8001/notes')
+    fetch('https://sticky-notess.herokuapp.com/notes')
     .then(res=>res.json())
     .then(data=>setdata(data))
 },[])
 const handle= async (id)=>{
-  await fetch('http://localhost:8001/notes/'+ id,{
+  await fetch('https://sticky-notess.herokuapp.com/notes/'+ id,{
     method:'DELETE'
   })
   const newNotes=data.filter(note =>note.id !=id)
